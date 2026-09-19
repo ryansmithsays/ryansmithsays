@@ -25,9 +25,11 @@
   --gutter: clamp(1.25rem, 4vw, 3.5rem);
 
   /* PHOTO SLOTS
-     Add images to /assets and uncomment the matching line, e.g.
-     --photo-portrait: url("../assets/ryan-portrait.jpg");            */
-  --photo-portrait: none;
+     Images live in /assets. A slot that points at a missing file simply
+     falls back to its gradient, so nothing breaks before a photo is added.
+     To use a photo on the other slots, set e.g.
+     --photo-health: url("../assets/health.jpg");                        */
+  --photo-portrait: url("../assets/ryan-portrait.jpg");
   --photo-health: none;
   --photo-launch: none;
   --photo-gtm: none;
@@ -238,26 +240,28 @@ a { color: inherit; text-decoration: none; }
 .hero__photo {
   position: absolute;
   inset: 0;
-  background-color: #1a2233;
+  background-color: #0f1a2e;
+  /* Layer 1: the portrait. Layer 2: navy fallback that matches the photo's
+     wall color, so the hero still looks right if the image is missing. */
   background-image:
     var(--photo-portrait),
-    radial-gradient(ellipse 45% 55% at 52% 42%, #b9865f 0 38%, transparent 39%),
-    radial-gradient(ellipse 60% 55% at 52% 100%, #1b2a4a 0 60%, transparent 61%),
-    linear-gradient(120deg, #e9e4da 0%, #cfc6b6 38%, #2a3040 39%, #161b28 100%);
-  background-size: cover, 100% 100%, 100% 100%, 100% 100%;
-  background-position: center top;
+    linear-gradient(120deg, #0f1a2e 0%, #16233d 55%, #22304d 100%);
+  background-size: cover, 100% 100%;
+  /* The subject sits right of center in the photo; bias the crop toward him. */
+  background-position: 64% 22%, center;
   background-repeat: no-repeat;
 }
 .hero__note {
   position: absolute;
   z-index: 2;
   top: 1.5rem;
-  left: 1rem;
+  left: 1.5rem;
   width: 11rem;
   font-family: var(--font-script);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   line-height: 1.2;
-  color: var(--ink);
+  color: #f3e9d0;
+  text-shadow: 0 1px 8px rgba(5, 10, 22, .6);
   transform: rotate(-9deg);
 }
 
