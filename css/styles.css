@@ -25,11 +25,12 @@
   --gutter: clamp(1.25rem, 4vw, 3.5rem);
 
   /* PHOTO SLOTS
-     Images live in /assets. A slot that points at a missing file simply
+     Paths are relative to this stylesheet. A slot pointing at a missing file
      falls back to its gradient, so nothing breaks before a photo is added.
-     To use a photo on the other slots, set e.g.
+     The portrait currently lives at the repo root (ryan-portrait.jpg).
+     To use a photo on another slot, set e.g.
      --photo-health: url("../assets/health.jpg");                        */
-  --photo-portrait: url("../assets/ryan-portrait.jpg");
+  --photo-portrait: url("../ryan-portrait.jpg");
   --photo-health: none;
   --photo-launch: none;
   --photo-gtm: none;
