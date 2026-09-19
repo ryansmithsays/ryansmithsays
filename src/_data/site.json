@@ -1,0 +1,12 @@
+{
+  "name": "Ryan Smith Says",
+  "url": "https://ryansmithsays.com",
+  "contactUrl": "https://www.ryansmithsays.com/connect-with-me",
+  "nav": [
+    { "text": "Work", "href": "https://www.ryansmithsays.com/marketing-portfolio" },
+    { "text": "Storytelling", "href": "https://www.ryansmithsays.com/storytelling-coach" },
+    { "text": "Speaking", "href": "https://www.ryansmithsays.com/public-speaking-engagements" },
+    { "text": "Insights", "href": "/#insights", "internal": true },
+    { "text": "About", "href": "https://www.ryansmithsays.com/about" }
+  ]
+}
