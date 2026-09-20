@@ -1,19 +1,22 @@
 {
   "name": "Ryan Smith Says",
   "url": "https://ryansmithsays.com",
-  "contactUrl": "https://www.ryansmithsays.com/connect-with-me",
+  "contactUrl": "/connect-with-me/",
   "nav": [
     {
       "text": "Work",
-      "href": "https://www.ryansmithsays.com/marketing-portfolio"
+      "href": "/marketing-portfolio/",
+      "internal": true
     },
     {
       "text": "Storytelling",
-      "href": "https://www.ryansmithsays.com/storytelling-coach"
+      "href": "/storytelling-coach/",
+      "internal": true
     },
     {
       "text": "Speaking",
-      "href": "https://www.ryansmithsays.com/public-speaking-engagements"
+      "href": "/public-speaking-engagements/",
+      "internal": true
     },
     {
       "text": "Podcasts",
@@ -32,15 +35,18 @@
       "links": [
         {
           "text": "Work",
-          "href": "https://www.ryansmithsays.com/marketing-portfolio"
+          "href": "/marketing-portfolio/",
+          "internal": true
         },
         {
           "text": "Storytelling",
-          "href": "https://www.ryansmithsays.com/storytelling-coach"
+          "href": "/storytelling-coach/",
+          "internal": true
         },
         {
           "text": "Speaking",
-          "href": "https://www.ryansmithsays.com/public-speaking-engagements"
+          "href": "/public-speaking-engagements/",
+          "internal": true
         },
         {
           "text": "Podcasts",
@@ -54,7 +60,8 @@
       "links": [
         {
           "text": "Let's talk",
-          "href": "https://www.ryansmithsays.com/connect-with-me"
+          "href": "/connect-with-me/",
+          "internal": true
         },
         {
           "text": "Medium",
@@ -76,11 +83,13 @@
         },
         {
           "text": "Recommendations",
-          "href": "https://www.ryansmithsays.com/recommendations"
+          "href": "/recommendations/",
+          "internal": true
         },
         {
           "text": "Resources",
-          "href": "https://www.ryansmithsays.com/resources"
+          "href": "/resources/",
+          "internal": true
         }
       ]
     }
