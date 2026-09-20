@@ -19,6 +19,11 @@
       "internal": true
     },
     {
+      "text": "Blog",
+      "href": "/resources/",
+      "internal": true
+    },
+    {
       "text": "Podcasts",
       "href": "/#insights",
       "internal": true
@@ -46,6 +51,11 @@
         {
           "text": "Speaking",
           "href": "/public-speaking-engagements/",
+          "internal": true
+        },
+        {
+          "text": "Blog",
+          "href": "/resources/",
           "internal": true
         },
         {
@@ -84,11 +94,6 @@
         {
           "text": "Recommendations",
           "href": "/recommendations/",
-          "internal": true
-        },
-        {
-          "text": "Resources",
-          "href": "/resources/",
           "internal": true
         }
       ]
