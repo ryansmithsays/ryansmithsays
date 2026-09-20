@@ -1,9 +1,17 @@
 // Eleventy config for ryansmithsays.com
+import { existsSync } from "node:fs";
+
 // Source lives in /src. The build writes finished pages to /_site.
 export default function (eleventyConfig) {
   // Files copied to the site as-is (paths are relative to the repo root).
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("ryan-portrait.jpg");
+  // Favicon and social-share image (the .ico, .png and .jpg are uploaded by hand).
+  for (const file of ["favicon.svg", "favicon.ico", "apple-touch-icon.png", "og-image.jpg"]) {
+    if (existsSync(file)) eleventyConfig.addPassthroughCopy(file);
+  }
+  // Logo SVGs are served publicly at /assets/logo/ and also inlined by the layout.
+  eleventyConfig.addPassthroughCopy({ "src/_includes/logos": "assets/logo" });
 
   return {
     dir: {
