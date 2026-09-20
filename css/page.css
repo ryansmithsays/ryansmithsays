@@ -89,6 +89,48 @@
 .prose a { border-bottom: 2px solid var(--gold); }
 .prose a:hover { border-bottom-color: var(--navy-900); }
 
+/* In-article subheadings, for blog posts written as a single prose band. */
+.prose h3 {
+  margin-top: 2rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.prose h3:first-child { margin-top: 0; }
+.prose h3 + p { margin-top: .6rem; }
+
+/* Bulleted lists inside prose (TL;DR summaries, step lists). Matches the
+   ledger__list bullet treatment so the visual language stays consistent. */
+.prose ul {
+  margin-top: 1.1rem;
+  display: grid;
+  gap: .7rem;
+}
+.prose ul + p, .prose p + ul { margin-top: 1.1rem; }
+.prose li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+.prose li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .8em;
+  width: .7rem;
+  height: 2px;
+  background: var(--gold-deep);
+}
+.prose li strong { font-weight: 600; }
+
+/* A small caption line, e.g. before an embedded audio/podcast link. */
+.prose .prose__note {
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
 /* ---------- Ledger ----------
    Term on the left, detail on the right, a hairline between rows. Used for
    expertise, career history and interests. */
