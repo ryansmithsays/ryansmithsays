@@ -134,7 +134,9 @@
 }
 .ledger__list strong { font-weight: 600; }
 
-/* Two-column variant: term above detail, rows flow across two columns. */
+/* Two-column variant: term above detail, rows flow across two columns.
+   align-content keeps a short card's term and text together instead of
+   stretching to match a taller neighbor. */
 .ledger--cols {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -143,6 +145,7 @@
 .ledger--cols .ledger__row,
 .ledger--cols .ledger__row:first-child {
   grid-template-columns: 1fr;
+  align-content: start;
   padding: 1.5rem 0;
   border-top: 1px solid var(--rule);
 }
