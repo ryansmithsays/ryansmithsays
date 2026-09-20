@@ -1,8 +1,14 @@
 // Eleventy config for ryansmithsays.com
 import { existsSync } from "node:fs";
+import { HtmlBasePlugin } from "@11ty/eleventy";
 
 // Source lives in /src. The build writes finished pages to /_site.
 export default function (eleventyConfig) {
+  // Prefixes root-relative links (href="/about/") with the path prefix at build
+  // time, so every link works on the github.io preview (/ryansmithsays/) and on
+  // the custom domain (/). Already-prefixed links are left alone.
+  eleventyConfig.addPlugin(HtmlBasePlugin);
+
   // Files copied to the site as-is (paths are relative to the repo root).
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("ryan-portrait.jpg");
