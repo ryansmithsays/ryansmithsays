@@ -20,16 +20,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ site.url }}/og-image.jpg">
 
-  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
-  <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="32x32">
-  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | url }}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,800&family=Caveat:wght@500&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+  <link rel="stylesheet" href="/css/styles.css">
   {%- if pageCss %}
-  <link rel="stylesheet" href="{{ pageCss | url }}">
+  <link rel="stylesheet" href="{{ pageCss }}">
   {%- endif %}
 </head>
 <body id="top">
@@ -37,10 +37,10 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="wordmark" href="{{ '/' | url }}" aria-label="{{ site.name }}, home"><span>Ryan Smith</span><span class="wordmark__box">Says</span></a>
+      <a class="wordmark" href="/" aria-label="{{ site.name }}, home"><span>Ryan Smith</span><span class="wordmark__box">Says</span></a>
       <nav class="site-nav" aria-label="Primary">
         {%- for item in site.nav %}
-        <a href="{% if item.internal %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}"{% if item.internal and item.href == page.url %} aria-current="page"{% endif %}>{{ item.text }}</a>
+        <a href="{{ item.href }}"{% if item.internal and item.href == page.url %} aria-current="page"{% endif %}>{{ item.text }}</a>
         {%- endfor %}
       </nav>
       <a class="btn btn--gold btn--sm" href="{{ site.contactUrl }}">Let's talk</a>
@@ -53,7 +53,7 @@
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <a class="site-footer__logo" href="{{ '/' | url }}" aria-label="{{ site.name }}, home">
+      <a class="site-footer__logo" href="/" aria-label="{{ site.name }}, home">
         {%- include "logos/stacked.svg" -%}
       </a>
       {%- for group in site.footer %}
@@ -61,7 +61,7 @@
         <h2 class="site-footer__title">{{ group.title }}</h2>
         <ul>
           {%- for item in group.links %}
-          <li><a href="{% if item.internal %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}">{{ item.text }}</a></li>
+          <li><a href="{{ item.href }}">{{ item.text }}</a></li>
           {%- endfor %}
         </ul>
       </nav>
