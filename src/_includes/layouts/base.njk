@@ -13,9 +13,16 @@
   <meta property="og:title" content="{{ ogTitle or title }}">
   <meta property="og:description" content="{{ ogDescription or description }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ryan Smith Says logo beside a portrait of Ryan Smith">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}/og-image.jpg">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a1830'/%3E%3Ctext x='32' y='46' font-size='40' font-family='Arial Black,Arial,sans-serif' font-weight='900' text-anchor='middle' fill='%23e6bd55'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | url }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +34,7 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="wordmark" href="{{ '/' | url }}" aria-label="{{ site.name }}, home">Ryan Smith <span>Says</span></a>
+      <a class="wordmark" href="{{ '/' | url }}" aria-label="{{ site.name }}, home"><span>Ryan Smith</span><span class="wordmark__box">Says</span></a>
       <nav class="site-nav" aria-label="Primary">
         {%- for item in site.nav %}
         <a href="{% if item.internal %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}">{{ item.text }}</a>
@@ -40,5 +47,24 @@
   <main id="main">
 {{ content | safe }}
   </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-footer__logo" href="{{ '/' | url }}" aria-label="{{ site.name }}, home">
+        {%- include "logos/stacked.svg" -%}
+      </a>
+      {%- for group in site.footer %}
+      <nav class="site-footer__group" aria-label="{{ group.title }}">
+        <h2 class="site-footer__title">{{ group.title }}</h2>
+        <ul>
+          {%- for item in group.links %}
+          <li><a href="{% if item.internal %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}">{{ item.text }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      {%- endfor %}
+      <p class="site-footer__legal">&copy; {{ build.year }} {{ site.name }}</p>
+    </div>
+  </footer>
 </body>
 </html>

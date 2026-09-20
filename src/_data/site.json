@@ -3,10 +3,84 @@
   "url": "https://ryansmithsays.com",
   "contactUrl": "https://www.ryansmithsays.com/connect-with-me",
   "nav": [
-    { "text": "Work", "href": "https://www.ryansmithsays.com/marketing-portfolio" },
-    { "text": "Storytelling", "href": "https://www.ryansmithsays.com/storytelling-coach" },
-    { "text": "Speaking", "href": "https://www.ryansmithsays.com/public-speaking-engagements" },
-    { "text": "Insights", "href": "/#insights", "internal": true },
-    { "text": "About", "href": "https://www.ryansmithsays.com/about" }
+    {
+      "text": "Work",
+      "href": "https://www.ryansmithsays.com/marketing-portfolio"
+    },
+    {
+      "text": "Storytelling",
+      "href": "https://www.ryansmithsays.com/storytelling-coach"
+    },
+    {
+      "text": "Speaking",
+      "href": "https://www.ryansmithsays.com/public-speaking-engagements"
+    },
+    {
+      "text": "Insights",
+      "href": "/#insights",
+      "internal": true
+    },
+    {
+      "text": "About",
+      "href": "https://www.ryansmithsays.com/about"
+    }
+  ],
+  "footer": [
+    {
+      "title": "Explore",
+      "links": [
+        {
+          "text": "Work",
+          "href": "https://www.ryansmithsays.com/marketing-portfolio"
+        },
+        {
+          "text": "Storytelling",
+          "href": "https://www.ryansmithsays.com/storytelling-coach"
+        },
+        {
+          "text": "Speaking",
+          "href": "https://www.ryansmithsays.com/public-speaking-engagements"
+        },
+        {
+          "text": "Insights",
+          "href": "/#insights",
+          "internal": true
+        }
+      ]
+    },
+    {
+      "title": "Connect",
+      "links": [
+        {
+          "text": "Let's talk",
+          "href": "https://www.ryansmithsays.com/connect-with-me"
+        },
+        {
+          "text": "Medium",
+          "href": "https://medium.com/@RyanSmithSays"
+        },
+        {
+          "text": "Podcast",
+          "href": "https://creators.spotify.com/pod/show/ryansmithsays"
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "links": [
+        {
+          "text": "About Ryan",
+          "href": "https://www.ryansmithsays.com/about"
+        },
+        {
+          "text": "Recommendations",
+          "href": "https://www.ryansmithsays.com/recommendations"
+        },
+        {
+          "text": "Resources",
+          "href": "https://www.ryansmithsays.com/resources"
+        }
+      ]
+    }
   ]
 }
