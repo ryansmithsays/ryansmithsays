@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Ryan Smith Says: sub pages
+   Loaded after styles.css by layouts/page.njk (through the pageCss front
+   matter), so it reuses the same tokens, buttons, eyebrows and closing band.
+   Spec: docs/sub-pages.md
+   ========================================================================== */
+
+.site-nav a[aria-current="page"] { color: var(--gold); opacity: 1; }
+
+/* ---------- Page hero ---------- */
+
+.page-hero { background: var(--cream); overflow: hidden; }
+.page-hero__inner {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 4.5rem) var(--gutter);
+}
+.page-hero__title {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: .92;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.page-hero .eyebrow + .page-hero__title { margin-top: 1rem; }
+.page-hero__title:first-child { margin-top: 0; }
+.page-hero__lede {
+  margin-top: 1.5rem;
+  max-width: 36rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* With a portrait: copy on the left, photo bleeding off the right edge,
+   the same arrangement as the home hero. */
+.page-hero--photo .page-hero__inner {
+  max-width: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, .86fr);
+  align-items: stretch;
+}
+.page-hero--photo .page-hero__copy {
+  align-self: center;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 1.5rem clamp(2.5rem, 5vw, 4.5rem) max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
+}
+.page-hero__photo {
+  min-height: 24rem;
+  background-color: #0f1a2e;
+  /* Same portrait and navy fallback as the home hero. */
+  background-image:
+    var(--photo-portrait),
+    linear-gradient(120deg, #0f1a2e 0%, #16233d 55%, #22304d 100%);
+  background-size: cover, 100% 100%;
+  background-position: 64% 22%, center;
+  background-repeat: no-repeat;
+}
+
+/* ---------- Bands ----------
+   A band is one section of a sub page: heading on the left, content on the
+   right. Bands alternate cream / sand; navy is reserved for emphasis. */
+
+.band {
+  --rule: rgba(10, 15, 28, .18);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  background: var(--cream);
+}
+.band--sand { background: var(--sand); }
+.band--navy { background: var(--navy-900); color: #fff; --rule: rgba(255, 255, 255, .28); }
+.band--navy .display { color: #fff; }
+.band--navy :focus-visible { outline-color: var(--gold); }
+.band__inner {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 2.2fr);
+  gap: 1.25rem clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+.band__links { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
+
+/* ---------- Prose ---------- */
+
+.prose { max-width: 40rem; font-size: 1.05rem; line-height: 1.7; }
+.prose p + p { margin-top: 1.1rem; }
+.prose a { border-bottom: 2px solid var(--gold); }
+.prose a:hover { border-bottom-color: var(--navy-900); }
+
+/* ---------- Ledger ----------
+   Term on the left, detail on the right, a hairline between rows. Used for
+   expertise, career history and interests. */
+
+.ledger { margin: 0; }
+.ledger__row {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 2fr);
+  gap: .5rem 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+.ledger__row:first-child { padding-top: 0; border-top: 0; }
+.ledger__term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1.05;
+}
+.ledger__meta {
+  display: block;
+  margin-top: .35rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: .82rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.ledger__def { max-width: 42rem; margin: 0; line-height: 1.65; }
+.ledger__def a { border-bottom: 2px solid var(--gold); }
+.ledger__def a:hover { border-bottom-color: var(--navy-900); }
+.ledger__def p + p { margin-top: .9rem; }
+.ledger__list { display: grid; gap: .7rem; }
+.ledger__list li { position: relative; padding-left: 1.4rem; }
+.ledger__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .8em;
+  width: .7rem;
+  height: 2px;
+  background: var(--gold-deep);
+}
+.ledger__list strong { font-weight: 600; }
+
+/* Two-column variant: term above detail, rows flow across two columns. */
+.ledger--cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(2rem, 5vw, 4rem);
+}
+.ledger--cols .ledger__row,
+.ledger--cols .ledger__row:first-child {
+  grid-template-columns: 1fr;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- Values band ---------- */
+
+.values { background: var(--navy-900); color: #fff; }
+.values__inner {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding: 2.5rem var(--gutter);
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 2.2fr);
+  gap: 1rem clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.values__label {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.values__list { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; }
+.values__list li {
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+  border-left: 1px solid rgba(255, 255, 255, .28);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6.5vw, 5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.values__list li:first-child { padding-left: 0; border-left: 0; }
+
+/* ---------- Pull statement ---------- */
+
+.pull {
+  max-width: 38rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+.pull + p {
+  margin-top: 1.25rem;
+  max-width: 36rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #dfe6f3;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1000px) {
+  .page-hero--photo .page-hero__inner { grid-template-columns: 1fr; }
+  .page-hero__photo { order: -1; min-height: 22rem; }
+  .page-hero--photo .page-hero__copy { padding: 2rem var(--gutter) 2.5rem; }
+
+  .band__inner,
+  .values__inner { grid-template-columns: 1fr; }
+
+  .ledger__row { grid-template-columns: 1fr; }
+  .ledger--cols { grid-template-columns: 1fr; }
+  .ledger--cols .ledger__row:first-child { padding-top: 1.5rem; }
+}
+
+@media (max-width: 720px) {
+  .page-hero__photo { background-position: 52% 22%, center; }
+
+  .values__list { grid-template-columns: 1fr; }
+  .values__list li,
+  .values__list li:first-child {
+    padding: .8rem 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, .28);
+  }
+  .values__list li:first-child { border-top: 0; }
+}

@@ -22,7 +22,8 @@
     },
     {
       "text": "About",
-      "href": "https://www.ryansmithsays.com/about"
+      "href": "/about/",
+      "internal": true
     }
   ],
   "footer": [
@@ -70,7 +71,8 @@
       "links": [
         {
           "text": "About Ryan",
-          "href": "https://www.ryansmithsays.com/about"
+          "href": "/about/",
+          "internal": true
         },
         {
           "text": "Recommendations",
