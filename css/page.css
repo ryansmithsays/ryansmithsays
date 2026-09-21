@@ -203,11 +203,16 @@
 
 /* Post variant: a small featured-image thumbnail sits after the term, so
    each row becomes term / thumbnail / def across three columns. Used on the
-   blog index (resources.njk) so every post shows its header image. */
+   blog index (resources.njk) so every post shows its header image. The
+   row's own column-gap is tightened so the thumbnail sits close to the
+   text, and the term gets its own right margin to keep its usual spacing
+   from the thumbnail. */
 .ledger--posts .ledger__row {
   grid-template-columns: minmax(0, .9fr) auto minmax(0, 2fr);
   align-items: start;
+  column-gap: .75rem;
 }
+.ledger--posts .ledger__term { margin-right: 1.25rem; }
 .ledger__thumb {
   width: 6rem;
   height: 6rem;
