@@ -14,7 +14,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("ryan-portrait.jpg");
   // Photos for the homepage/work cards and blog posts, uploaded to the repo root.
   for (const file of [
-    "Health.png", "MiCloud-Video.png", "portfolio.png",
+    "Health.png", "MiCloud-Video.png", "ActivityCloud-Video.png", "portfolio.png",
     "Blog-ContentMarketer.jpg", "Blog-Burnout.jpg", "Blog-UnderratedDiscipline.jpg",
     "Blog-BlueprinttoBrilliance.jpg", "Blog-BlueprintMessingDevelopment.jpg", "Blog-MessagingDevelopment.jpg",
   ]) {
