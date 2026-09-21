@@ -201,6 +201,21 @@
   border-top: 1px solid var(--rule);
 }
 
+/* Post variant: a small featured-image thumbnail sits before the term, so
+   each row becomes thumbnail / term / def across three columns. Used on the
+   blog index (resources.njk) so every post shows its header image. */
+.ledger--posts .ledger__row {
+  grid-template-columns: auto minmax(0, .9fr) minmax(0, 2fr);
+  align-items: start;
+}
+.ledger__thumb {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: .4rem;
+  display: block;
+}
+
 /* ---------- Values band ---------- */
 
 .values { background: var(--navy-900); color: #fff; }
@@ -262,6 +277,8 @@
   .ledger__row { grid-template-columns: 1fr; }
   .ledger--cols { grid-template-columns: 1fr; }
   .ledger--cols .ledger__row:first-child { padding-top: 1.5rem; }
+  .ledger--posts .ledger__row { grid-template-columns: auto 1fr; }
+  .ledger--posts .ledger__def { grid-column: 1 / -1; }
 }
 
 @media (max-width: 720px) {
@@ -275,4 +292,7 @@
     border-top: 1px solid rgba(255, 255, 255, .28);
   }
   .values__list li:first-child { border-top: 0; }
+
+  .ledger--posts .ledger__row { grid-template-columns: auto 1fr; }
+  .ledger__thumb { width: 4.5rem; height: 4.5rem; }
 }
