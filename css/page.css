@@ -201,24 +201,28 @@
   border-top: 1px solid var(--rule);
 }
 
-/* Post variant: a small featured-image thumbnail sits after the term, so
-   each row becomes term / thumbnail / def across three columns. Used on the
-   blog index (resources.njk) so every post shows its header image. The
-   row's own column-gap is tightened so the thumbnail sits close to the
-   text, and the term gets its own right margin to keep its usual spacing
-   from the thumbnail. */
+/* Post variant: back to the standard two-column ledger (term / def), but
+   the term's cell holds both the "Blog" label and the featured-image
+   thumbnail. The thumbnail is pushed to the far right edge of the term's
+   own cell (justify-self: end), so it sits as close as possible to the
+   description in the next column, while "Blog" stays put on the left with
+   normal breathing room before the image. */
 .ledger--posts .ledger__row {
-  grid-template-columns: minmax(0, .9fr) auto minmax(0, 2fr);
-  align-items: start;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 2fr);
+}
+.ledger--posts .ledger__term {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
   column-gap: .75rem;
 }
-.ledger--posts .ledger__term { margin-right: 1.25rem; }
 .ledger__thumb {
   width: 6rem;
   height: 6rem;
   object-fit: cover;
   border-radius: .4rem;
   display: block;
+  justify-self: end;
 }
 
 /* ---------- Values band ---------- */
@@ -282,8 +286,7 @@
   .ledger__row { grid-template-columns: 1fr; }
   .ledger--cols { grid-template-columns: 1fr; }
   .ledger--cols .ledger__row:first-child { padding-top: 1.5rem; }
-  .ledger--posts .ledger__row { grid-template-columns: 1fr auto; }
-  .ledger--posts .ledger__def { grid-column: 1 / -1; }
+  .ledger--posts .ledger__row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px) {
@@ -298,6 +301,5 @@
   }
   .values__list li:first-child { border-top: 0; }
 
-  .ledger--posts .ledger__row { grid-template-columns: 1fr auto; }
   .ledger__thumb { width: 4.5rem; height: 4.5rem; }
 }
