@@ -131,6 +131,15 @@
   color: var(--ink-soft);
 }
 
+/* A single content photo inside an article, e.g. a blog post header image. */
+.prose__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+  margin: 1.5rem 0;
+}
+
 /* ---------- Ledger ----------
    Term on the left, detail on the right, a hairline between rows. Used for
    expertise, career history and interests. */
