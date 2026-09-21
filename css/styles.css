@@ -31,9 +31,9 @@
      To use a photo on another slot, set e.g.
      --photo-health: url("../assets/health.jpg");                        */
   --photo-portrait: url("../ryan-portrait.jpg");
-  --photo-health: none;
-  --photo-launch: none;
-  --photo-gtm: none;
+  --photo-health: url("../Health.png");
+  --photo-launch: url("../MiCloud-Video.png");
+  --photo-gtm: url("../portfolio.png");
   --photo-post-portrait: url("../ryan-portrait.jpg");
   --photo-post-mic: none;
   --photo-post-leaf: none;
