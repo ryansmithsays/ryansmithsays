@@ -12,6 +12,14 @@ export default function (eleventyConfig) {
   // Files copied to the site as-is (paths are relative to the repo root).
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("ryan-portrait.jpg");
+  // Photos for the homepage/work cards and blog posts, uploaded to the repo root.
+  for (const file of [
+    "Health.png", "MiCloud-Video.png", "portfolio.png",
+    "Blog-ContentMarketer.jpg", "Blog-Burnout.jpg", "Blog-UnderratedDiscipline.jpg",
+    "Blog-BlueprinttoBrilliance.jpg", "Blog-BlueprintMessingDevelopment.jpg", "Blog-MessagingDevelopment.jpg",
+  ]) {
+    if (existsSync(file)) eleventyConfig.addPassthroughCopy(file);
+  }
   // Favicon and social-share image (the .ico, .png and .jpg are uploaded by hand).
   for (const file of ["favicon.svg", "favicon.ico", "apple-touch-icon.png", "og-image.jpg"]) {
     if (existsSync(file)) eleventyConfig.addPassthroughCopy(file);
