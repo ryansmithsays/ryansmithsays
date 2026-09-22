@@ -31,6 +31,17 @@
   {%- if pageCss %}
   <link rel="stylesheet" href="{{ pageCss }}">
   {%- endif %}
+
+  <!-- Google Analytics (GA4) -->
+  {%- if env.production %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT81CESTS4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FT81CESTS4');
+  </script>
+  {%- endif %}
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
