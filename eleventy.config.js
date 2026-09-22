@@ -12,6 +12,9 @@ export default function (eleventyConfig) {
   // Files copied to the site as-is (paths are relative to the repo root).
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("ryan-portrait.jpg");
+  // Tells GitHub Pages the custom domain; must ship in every build's output,
+  // since Actions-based Pages deploys don't persist it any other way.
+  eleventyConfig.addPassthroughCopy("CNAME");
   // Photos for the homepage/work cards and blog posts, uploaded to the repo root.
   for (const file of [
     "Health.png", "MiCloud-Video.png", "ActivityCloud-Video.png", "portfolio.png",
