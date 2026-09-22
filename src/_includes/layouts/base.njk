@@ -31,17 +31,6 @@
   {%- if pageCss %}
   <link rel="stylesheet" href="{{ pageCss }}">
   {%- endif %}
-
-  <!-- Google Analytics (GA4) -->
-  {%- if env.production %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT81CESTS4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FT81CESTS4');
-  </script>
-  {%- endif %}
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -80,5 +69,56 @@
       <p class="site-footer__legal">&copy; {{ build.year }} {{ site.name }}</p>
     </div>
   </footer>
+
+  {%- if env.production %}
+  <div class="cookie-banner" id="cookie-banner" hidden>
+    <p>This site uses cookies to understand how it's visited, via Google Analytics. You're welcome to decline.</p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn--outline btn--sm" id="cookie-decline">Decline</button>
+      <button type="button" class="btn btn--gold btn--sm" id="cookie-accept">Accept</button>
+    </div>
+  </div>
+
+  <!-- Google Analytics (GA4), loaded only after consent -->
+  <script>
+    (function () {
+      var GA_ID = "G-FT81CESTS4";
+      var STORAGE_KEY = "cookie-consent";
+
+      function loadGA() {
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag("js", new Date());
+        gtag("config", GA_ID);
+      }
+
+      var consent = localStorage.getItem(STORAGE_KEY);
+      if (consent === "granted") {
+        loadGA();
+        return;
+      }
+      if (consent === "denied") {
+        return;
+      }
+
+      var banner = document.getElementById("cookie-banner");
+      banner.hidden = false;
+      document.getElementById("cookie-accept").addEventListener("click", function () {
+        localStorage.setItem(STORAGE_KEY, "granted");
+        banner.hidden = true;
+        loadGA();
+      });
+      document.getElementById("cookie-decline").addEventListener("click", function () {
+        localStorage.setItem(STORAGE_KEY, "denied");
+        banner.hidden = true;
+      });
+    })();
+  </script>
+  {%- endif %}
 </body>
 </html>
