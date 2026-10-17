@@ -4,6 +4,11 @@
   "contactUrl": "/connect-with-me/",
   "nav": [
     {
+      "text": "AI Strategy",
+      "href": "/ai-strategy/",
+      "internal": true
+    },
+    {
       "text": "Work",
       "href": "/marketing-portfolio/",
       "internal": true
@@ -38,6 +43,11 @@
     {
       "title": "Explore",
       "links": [
+        {
+          "text": "AI Strategy",
+          "href": "/ai-strategy/",
+          "internal": true
+        },
         {
           "text": "Work",
           "href": "/marketing-portfolio/",
