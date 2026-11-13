@@ -311,3 +311,10 @@
   .app { flex-direction: column; }
   .app__icon { width: 6rem; height: 6rem; border-radius: 1.4rem; }
 }
+
+/* Logos and mascots gallery */
+.mascots { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 1rem; }
+.mascots a { display: block; text-align: center; border-bottom: 0; }
+.mascots img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: #fff; border-radius: .75rem; padding: .5rem; }
+.mascots span { display: block; margin-top: .5rem; font-weight: 600; font-size: .95rem; }
+.mascots a:hover span, .mascots a:focus-visible span { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: .2em; }
