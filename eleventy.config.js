@@ -17,6 +17,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   // Photos for the homepage/work cards and blog posts, uploaded to the repo root.
   for (const file of [
+    "app-king-of-beasts.png", "app-war-of-the-4-kings.png", "app-check-my-list.png",
     "Health.png", "MiCloud-Video.png", "ActivityCloud-Video.png", "portfolio.png",
     "Blog-ContentMarketer.jpg", "Blog-Burnout.jpg", "Blog-UnderratedDiscipline.jpg",
     "Blog-BlueprinttoBrilliance.jpg", "Blog-BlueprintMessingDevelopment.jpg", "Blog-MessagingDevelopment.jpg",

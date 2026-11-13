@@ -14,6 +14,11 @@
       "internal": true
     },
     {
+      "text": "Apps",
+      "href": "/apps/",
+      "internal": true
+    },
+    {
       "text": "Storytelling",
       "href": "/storytelling-coach/",
       "internal": true
@@ -51,6 +56,11 @@
         {
           "text": "Work",
           "href": "/marketing-portfolio/",
+          "internal": true
+        },
+        {
+          "text": "Apps",
+          "href": "/apps/",
           "internal": true
         },
         {
